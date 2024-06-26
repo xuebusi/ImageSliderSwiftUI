@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B5F364E2C2C100400E91330 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F364D2C2C100400E91330 /* Photo.swift */; };
+		2B5F36512C2C169F00E91330 /* PhotoSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F36502C2C169F00E91330 /* PhotoSliderView.swift */; };
+		2B5F36542C2C16E300E91330 /* PhotoHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F36532C2C16E300E91330 /* PhotoHomeView.swift */; };
+		2B5F36582C2C173000E91330 /* ImageHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F36572C2C173000E91330 /* ImageHomeView.swift */; };
+		2B5F365A2C2C178C00E91330 /* AnimationEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5F36592C2C178C00E91330 /* AnimationEffect.swift */; };
 		2B781D8D2C2BBFAE0019D619 /* ImageSliderSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B781D8C2C2BBFAE0019D619 /* ImageSliderSwiftUIApp.swift */; };
 		2B781D8F2C2BBFAE0019D619 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B781D8E2C2BBFAE0019D619 /* ContentView.swift */; };
 		2B781D912C2BBFAF0019D619 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B781D902C2BBFAF0019D619 /* Assets.xcassets */; };
@@ -15,6 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B5F364D2C2C100400E91330 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		2B5F36502C2C169F00E91330 /* PhotoSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSliderView.swift; sourceTree = "<group>"; };
+		2B5F36532C2C16E300E91330 /* PhotoHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHomeView.swift; sourceTree = "<group>"; };
+		2B5F36572C2C173000E91330 /* ImageHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHomeView.swift; sourceTree = "<group>"; };
+		2B5F36592C2C178C00E91330 /* AnimationEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationEffect.swift; sourceTree = "<group>"; };
 		2B781D892C2BBFAE0019D619 /* ImageSliderSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageSliderSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B781D8C2C2BBFAE0019D619 /* ImageSliderSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSliderSwiftUIApp.swift; sourceTree = "<group>"; };
 		2B781D8E2C2BBFAE0019D619 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +44,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B5F364C2C2C0FF400E91330 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B5F364D2C2C100400E91330 /* Photo.swift */,
+				2B5F36592C2C178C00E91330 /* AnimationEffect.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2B5F364F2C2C168F00E91330 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B5F36562C2C172500E91330 /* image */,
+				2B5F36552C2C171A00E91330 /* photo */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B5F36552C2C171A00E91330 /* photo */ = {
+			isa = PBXGroup;
+			children = (
+				2B5F36502C2C169F00E91330 /* PhotoSliderView.swift */,
+				2B5F36532C2C16E300E91330 /* PhotoHomeView.swift */,
+			);
+			path = photo;
+			sourceTree = "<group>";
+		};
+		2B5F36562C2C172500E91330 /* image */ = {
+			isa = PBXGroup;
+			children = (
+				2B5F36572C2C173000E91330 /* ImageHomeView.swift */,
+				2B781D9A2C2BBFD00019D619 /* ImageSliderView.swift */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
 		2B781D802C2BBFAE0019D619 = {
 			isa = PBXGroup;
 			children = (
@@ -53,9 +99,10 @@
 		2B781D8B2C2BBFAE0019D619 /* ImageSliderSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				2B5F364F2C2C168F00E91330 /* View */,
+				2B5F364C2C2C0FF400E91330 /* Model */,
 				2B781D8C2C2BBFAE0019D619 /* ImageSliderSwiftUIApp.swift */,
 				2B781D8E2C2BBFAE0019D619 /* ContentView.swift */,
-				2B781D9A2C2BBFD00019D619 /* ImageSliderView.swift */,
 				2B781D902C2BBFAF0019D619 /* Assets.xcassets */,
 				2B781D922C2BBFAF0019D619 /* Preview Content */,
 			);
@@ -140,8 +187,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B5F364E2C2C100400E91330 /* Photo.swift in Sources */,
 				2B781D9B2C2BBFD00019D619 /* ImageSliderView.swift in Sources */,
+				2B5F36582C2C173000E91330 /* ImageHomeView.swift in Sources */,
+				2B5F365A2C2C178C00E91330 /* AnimationEffect.swift in Sources */,
 				2B781D8F2C2BBFAE0019D619 /* ContentView.swift in Sources */,
+				2B5F36512C2C169F00E91330 /* PhotoSliderView.swift in Sources */,
+				2B5F36542C2C16E300E91330 /* PhotoHomeView.swift in Sources */,
 				2B781D8D2C2BBFAE0019D619 /* ImageSliderSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +331,7 @@
 				DEVELOPMENT_TEAM = 73VA8W4WNH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "请求访问您的相册";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -308,6 +361,7 @@
 				DEVELOPMENT_TEAM = 73VA8W4WNH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "请求访问您的相册";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

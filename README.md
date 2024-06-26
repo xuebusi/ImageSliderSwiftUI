@@ -1,0 +1,2 @@
+# ImageSliderSwiftUI
+使用SwiftUI实现上下滑动移除图片后自动切换下一张图片

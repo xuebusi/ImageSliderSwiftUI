@@ -45,7 +45,7 @@ struct ContentView: View {
     
     /// - 初始化图片数组
     private func loadImages() {
-        images = (1...6).map { "Pic \($0)" }
+        images = (1...2).map { "Pic \($0)" }
     }
 }
 

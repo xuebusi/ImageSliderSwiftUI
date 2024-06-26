@@ -106,21 +106,6 @@ struct ImageSliderView: View {
             offset = .zero
             scale = 0
             opacity = 0
-        case .fadeIn:
-            opacity = 0
-        case .rotate:
-            scale = 0.5
-            opacity = 0
-        case .elasticSlideIn:
-            offset = CGSize(width: UIScreen.main.bounds.width, height: 0)
-        case .flip:
-            opacity = 0
-        case .diagonalSlideIn:
-            offset = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        case .combinedEffect:
-            offset = CGSize(width: UIScreen.main.bounds.width, height: 0)
-            scale = 0.5
-            opacity = 0
         }
         
         withAnimation(.easeInOut(duration: 0.5)) {

@@ -23,22 +23,4 @@ enum AnimationEffect {
     
     /// 从屏幕中心缩放显示
     case scaleFromCenter
-    
-    /// 淡入淡出效果
-    case fadeIn
-    
-    /// 旋转效果
-    case rotate
-    
-    /// 带有弹性效果的滑入
-    case elasticSlideIn
-    
-    /// 翻转效果
-    case flip
-    
-    /// 从斜角滑入
-    case diagonalSlideIn
-    
-    /// 组合效果，例如从右侧滑入并伴随旋转
-    case combinedEffect
 }

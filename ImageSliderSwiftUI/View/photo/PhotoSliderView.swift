@@ -10,14 +10,14 @@ import Photos
 
 /// - 实现上下滑动移除图片并通过动画展示下一张图片
 struct PhotoSliderView: View {
+    /// - 相册中的所有图片
     @Binding var photos: [Photo]
+    /// - 当前图片
     @State private var image: UIImage?
-    //@Binding var images: [String]
+    /// - 当前图片索引
     @Binding var currentIndex: Int
     @State private var animationEffect: AnimationEffect = .scaleFromCenter
     @State private var offset: CGSize = .zero
-    @State private var scale: CGFloat = 1
-    @State private var opacity: Double = 1
     
     init(photos: Binding<[Photo]>,
          currentIndex: Binding<Int>,
@@ -39,11 +39,8 @@ struct PhotoSliderView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                                    .background(.black.opacity(0.0000001))
-                                    .scaleEffect(scale)
-                                    .opacity(opacity)
+                                    .background(Color.black.opacity(0.0000001))
                                     .offset(offset)
-                                    .transition(.scale.combined(with: .opacity))
                                     .gesture(
                                         DragGesture()
                                             .onChanged { gesture in
@@ -67,12 +64,12 @@ struct PhotoSliderView: View {
                                                         if photos.isEmpty {
                                                             currentIndex = 0
                                                             offset = .zero
-                                                            scale = 1
-                                                            opacity = 1
                                                             return
                                                         }
                                                         
                                                         withAnimation {
+                                                            // 重置属性以准备应用新动画效果
+                                                            offset = .zero
                                                             image = nil
                                                             currentIndex = (currentIndex) % photos.count
                                                         }
@@ -89,6 +86,8 @@ struct PhotoSliderView: View {
                                     .onAppear {
                                         getImage2(from: photos[currentIndex].asset) { uiImage in
                                             self.image = uiImage
+                                            // 这里应用动画效果
+                                            applyAnimationEffect()
                                         }
                                     }
                             }
@@ -100,53 +99,28 @@ struct PhotoSliderView: View {
         }
     }
     
+    /// - 新图片入场动画
     private func applyAnimationEffect() {
         switch animationEffect {
         case .slideInFromRight:
             offset = CGSize(width: UIScreen.main.bounds.width, height: 0)
-            scale = 0
-            opacity = 0
         case .slideInFromLeft:
             offset = CGSize(width: -UIScreen.main.bounds.width, height: 0)
-            scale = 0
-            opacity = 0
         case .slideInFromTop:
             offset = CGSize(width: 0, height: -UIScreen.main.bounds.height)
-            scale = 0
-            opacity = 0
         case .slideInFromBottom:
             offset = CGSize(width: 0, height: UIScreen.main.bounds.height)
-            scale = 0
-            opacity = 0
         case .scaleFromCenter:
             offset = .zero
-            scale = 0
-            opacity = 0
-        case .fadeIn:
-            opacity = 0
-        case .rotate:
-            scale = 0.5
-            opacity = 0
-        case .elasticSlideIn:
-            offset = CGSize(width: UIScreen.main.bounds.width, height: 0)
-        case .flip:
-            opacity = 0
-        case .diagonalSlideIn:
-            offset = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        case .combinedEffect:
-            offset = CGSize(width: UIScreen.main.bounds.width, height: 0)
-            scale = 0.5
-            opacity = 0
         }
         
         withAnimation(.easeInOut(duration: 0.5)) {
             offset = .zero
-            scale = 1
-            opacity = 1
         }
     }
 }
 
+/// - 从Photos获取UIImage
 func getImage2(from asset: PHAsset, completion: @escaping (UIImage?) -> Void) {
     let manager = PHImageManager.default()
     let options = PHImageRequestOptions()

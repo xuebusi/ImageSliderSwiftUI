@@ -45,11 +45,6 @@ struct PhotoHomeView: View {
         }
     }
     
-    /// - 初始化图片数组
-    private func loadImages() {
-        images = (1...10).map { "Pic \($0)" }
-    }
-    
     func requestPhotoLibraryAccess() {
         PHPhotoLibrary.requestAuthorization(for: .readWrite) { status in
             if status == .authorized || status == .limited {
